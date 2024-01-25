@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Dati da config/data.js: {{ $home }}</h1>
-    <p>This is my paragraph content.</p>
+    @foreach ($fumetti as $fumetto)
+        <h1>{{$fumetto['title']}}</h1>
+        <p>{{$fumetto['description']}}</p>
+    @endforeach
+    
 @endsection
