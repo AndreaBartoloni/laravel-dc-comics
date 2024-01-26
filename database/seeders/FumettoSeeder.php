@@ -12,9 +12,9 @@ class FumettoSeeder extends Seeder
      */
     public function run(): void
     {
-        $array_fumetto = config('fumetto');
-        
-        foreach($array_fumetto as $fumetto_item){
+        $array_fumetto = config("fumetto");
+    
+        foreach ($array_fumetto as $fumetto_item) {
             $nuovo_fumetto = new Fumetti();
             $nuovo_fumetto->title = $fumetto_item['title'];
             $nuovo_fumetto->description = $fumetto_item['description'];
@@ -27,3 +27,5 @@ class FumettoSeeder extends Seeder
         }
     }
 }
+
+

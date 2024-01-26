@@ -14,12 +14,13 @@ return new class extends Migration
         Schema::create('fumetti', function (Blueprint $table) {
             $table->id();
             $table->string("title");
-            $table->string("description");
+            $table->longText("description");
             $table->string("thumb");
-            $table->decimal("price");
+            $table->string("price");
             $table->string("series");
-            $table->decimal("sale_date");
+            $table->date("sale_date");
             $table->string("type");
+            $table->timestamps();
         });
     }
 

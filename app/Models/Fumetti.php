@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Fumetti extends Model
 {
     use HasFactory;
+
 }
+
