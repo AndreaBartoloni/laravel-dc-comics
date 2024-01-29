@@ -10,7 +10,7 @@ class FumettoSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run(): void // il metodo run() viene eseguito ogni volta che viene chiamato
     {
         $array_fumetto = config("fumetto");
     

@@ -3,49 +3,41 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h2>Nuovo Fumetto</h2>
+            <h2>Modifica Fumetto</h2>
         </div>
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
         <div class="row">
-            <form action="{{route('fumetti.store')}}" method="POST" >
+            <form action="{{route('fumetti.update', $fumetti->id)}}" method="POST" >
                 @csrf
+                @method('PUT')
                 <div class="mb-3">
                     <label for="title" class="form-label">title</label>
-                    <input type="text" class="form-control" id="title" name="title" >
+                    <input type="text" class="form-control" id="title" name="title" value="{{$fumetti->title}}">
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">description</label>
-                    <input type="text" class="form-control" id="description" name="description">
+                    <input type="text" class="form-control" id="description" name="description" value="{{$fumetti->description}}">
                 </div>
                 <div class="mb-3">
                     <label for="type" class="form-label">type</label>
-                    <input type="text" class="form-control" id="type" name="type">
+                    <input type="text" class="form-control" id="type" name="type" value="{{$fumetti->type}}">
                 </div>
                 <div class="mb-3">
                     <label for="thumb" class="form-label">img</label>
-                    <input type="text" class="form-control" id="thumb" name="thumb">
+                    <input type="text" class="form-control" id="thumb" name="thumb" value="{{$fumetti->thumb}}">
                 </div>
                 <div class="mb-3">
                     <label for="price" class="form-label">price</label>
-                    <input type="text" class="form-control" id="price" name="price">
+                    <input type="text" class="form-control" id="price" name="price" value="{{$fumetti->price}}">
                 </div>
                 <div class="mb-3">
                     <label for="series" class="form-label">series</label>
-                    <input type="text" class="form-control" id="series" name="series">
+                    <input type="text" class="form-control" id="series" name="series" value="{{$fumetti->series}}">
                 </div>
                 <div class="mb-3">
                     <label for="sale_date" class="form-label">date</label>
-                    <input type="date" class="form-control" id="sale_date" name="sale_date">
+                    <input type="date" class="form-control" id="sale_date" name="sale_date" value="{{$fumetti->sale_date}}">
                 </div>
-                <button type="submit" class="btn btn-primary">Inserisci</button>
+                <button type="submit" class="btn btn-primary">Modifica</button>
             </form>
         </div>
     </div>
